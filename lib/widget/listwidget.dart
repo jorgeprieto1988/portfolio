@@ -10,8 +10,12 @@ class ListWidget extends StatelessWidget {
     return ListView(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      children:
-          Backend().getApps().map((item) => AppWidget(app: item)).toList(),
+      children: Backend()
+          .getApps()
+          .asMap()
+          .map((i, item) => MapEntry(i, AppWidget(app: item, index: i)))
+          .values
+          .toList(),
       //children: <CharacterWidget>[CharacterWidget(character: characters[0])],
     );
   }
