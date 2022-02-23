@@ -13,19 +13,22 @@ class Backend {
   /// Private list of apps.
   final _apps = [
     App(
-      name: 'MovieHunters',
+      name: 'QuickSOS',
       description: 'desc',
       languages: 'Kotlin',
+      image: 'images/quicksosquare.png',
     ),
     App(
       name: 'MovieHunters',
       description: 'desc',
       languages: 'Kotlin',
+      image: '',
     ),
     App(
       name: 'MovieHunters',
       description: 'desc',
       languages: 'Kotlin',
+      image: '',
     )
   ];
 

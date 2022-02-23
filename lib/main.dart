@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Prieto Jorge Portfolio',
+      title: 'Android Portfolio - Prieto Martin Jorge',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -27,11 +27,12 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('My Portfolio'),
         ),
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
+        body: SingleChildScrollView(
+            child: Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
               RichText(
                 text: TextSpan(
                   text: "My",
@@ -57,6 +58,6 @@ class MyHomePage extends StatelessWidget {
                 height: 50.0,
               ),
               ListWidget(),
-            ])));
+            ]))));
   }
 }
