@@ -1,5 +1,7 @@
 import 'package:portfolio/model/app.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/gestures.dart';
 
 class AppWidget extends StatelessWidget {
   final App app;
@@ -23,39 +25,79 @@ class AppWidget extends StatelessWidget {
         decoration: BoxDecoration(),
         child: Row(children: <Widget>[
           Expanded(
-              child: Card(
-                  child: Row(children: <Widget>[
-            Container(
-                margin: const EdgeInsets.all(15),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image(
-                        fit: BoxFit.fitWidth,
-                        alignment: FractionalOffset.topCenter,
-                        width: 150,
-                        height: 150,
-                        image: AssetImage(app.image)))),
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    app.name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      letterSpacing: -1,
-                    ),
-                  ),
-                  Text(
-                    app.languages,
-                    style: TextStyle(
-                      fontSize: 15,
-                      letterSpacing: -1,
-                    ),
-                  ),
-                ])
-          ]))),
+              flex: 3,
+              child: Container(
+                  child: Card(
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                    Expanded(
+                        flex: 1,
+                        child: Container(
+                            margin: const EdgeInsets.all(15),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image(
+                                    width: 150,
+                                    height: 150,
+                                    image: AssetImage(app.image))))),
+                    Expanded(
+                        flex: 3,
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                app.name,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  letterSpacing: -1,
+                                ),
+                              ),
+                              SizedBox(height: 5),
+                              Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    app.description,
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      letterSpacing: -1,
+                                      overflow: TextOverflow.clip,
+                                    ),
+                                  )),
+                              SizedBox(height: 10),
+                              Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "Language: " + app.languages,
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      letterSpacing: -1,
+                                    ),
+                                  )),
+                              SizedBox(height: 10),
+                              Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: RichText(
+                                      text: TextSpan(children: [
+                                    TextSpan(
+                                        text: "Github",
+                                        style: TextStyle(
+                                            fontSize: 15, color: Colors.blue),
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () async {
+                                            var url = app.github;
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          }),
+                                  ]))),
+                            ]))
+                  ])))),
+          Expanded(flex: 1, child: Container())
         ]));
   }
 
@@ -63,31 +105,91 @@ class AppWidget extends StatelessWidget {
     return Container(
         margin: EdgeInsets.all(5.0),
         decoration: BoxDecoration(),
-        child:
-            Row(crossAxisAlignment: CrossAxisAlignment.end, children: <Widget>[
+        child: Row(children: <Widget>[
+          Expanded(flex: 1, child: Container()),
           Expanded(
-              child: Card(
-                  color: Color.fromARGB(255, 51, 150, 59),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: <Widget>[
-                        Text(
-                          app.name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            letterSpacing: -1,
-                          ),
-                        ),
-                        Text(
-                          app.languages,
-                          style: TextStyle(
-                            fontSize: 15,
-                            letterSpacing: -1,
-                          ),
-                        ),
-                      ]))),
+              flex: 3,
+              child: Container(
+                  child: Card(
+                      color: Colors.green,
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Expanded(
+                                flex: 3,
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        app.name,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          letterSpacing: -1,
+                                        ),
+                                      ),
+                                      SizedBox(height: 5),
+                                      Align(
+                                          alignment: Alignment.centerRight,
+                                          child: Text(
+                                            app.description,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                              letterSpacing: -1,
+                                              overflow: TextOverflow.clip,
+                                            ),
+                                          )),
+                                      SizedBox(height: 10),
+                                      Align(
+                                          alignment: Alignment.centerRight,
+                                          child: Text(
+                                            "Language: " + app.languages,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                              letterSpacing: -1,
+                                            ),
+                                          )),
+                                      SizedBox(height: 10),
+                                      Align(
+                                          alignment: Alignment.centerRight,
+                                          child: RichText(
+                                              text: TextSpan(children: [
+                                            TextSpan(
+                                                text: "Github",
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    color: Color.fromARGB(
+                                                        255, 6, 26, 206)),
+                                                recognizer:
+                                                    TapGestureRecognizer()
+                                                      ..onTap = () async {
+                                                        var url = app.github;
+                                                        if (await canLaunch(
+                                                            url)) {
+                                                          await launch(url);
+                                                        } else {
+                                                          throw 'Could not launch $url';
+                                                        }
+                                                      }),
+                                          ]))),
+                                    ])),
+                            Expanded(
+                                flex: 1,
+                                child: Container(
+                                    margin: const EdgeInsets.all(15),
+                                    child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image(
+                                            width: 150,
+                                            height: 150,
+                                            image: AssetImage(app.image)))))
+                          ])))),
         ]));
   }
 }

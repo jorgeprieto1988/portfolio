@@ -5,10 +5,18 @@ class App {
   final String description;
   final String languages;
   final String image;
+  final String funcionalities;
+  final String arquitecture;
+  final String librariesservices;
+  final String github;
 
   App(
       {required this.name,
       required this.description,
       required this.languages,
-      required this.image});
+      required this.image,
+      required this.funcionalities,
+      required this.arquitecture,
+      required this.librariesservices,
+      required this.github});
 }
