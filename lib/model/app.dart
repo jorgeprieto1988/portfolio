@@ -9,6 +9,7 @@ class App {
   final String arquitecture;
   final String librariesservices;
   final String github;
+  final String playstore;
 
   App(
       {required this.name,
@@ -18,5 +19,6 @@ class App {
       required this.funcionalities,
       required this.arquitecture,
       required this.librariesservices,
-      required this.github});
+      required this.github,
+      required this.playstore});
 }

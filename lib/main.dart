@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('My Portfolio'),
+          title: Text('Android Portfolio - Prieto Martin Jorge'),
         ),
         body: SingleChildScrollView(
             child: Center(
