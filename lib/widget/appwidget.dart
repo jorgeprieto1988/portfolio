@@ -6,6 +6,7 @@ import 'package:flutter/gestures.dart';
 class AppWidget extends StatelessWidget {
   final App app;
   final int index;
+  final double crop = 4.0;
 
   AppWidget({Key? key, required this.app, required this.index})
       : super(key: key);
@@ -36,7 +37,7 @@ class AppWidget extends StatelessWidget {
                         child: Container(
                             margin: const EdgeInsets.all(15),
                             child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(crop),
                                 child: Image(
                                     width: 150,
                                     height: 150,
@@ -96,6 +97,7 @@ class AppWidget extends StatelessWidget {
                                           }),
                                   ]))),
                               playStore(),
+                              seeMore(),
                             ]))
                   ])))),
           Expanded(flex: 1, child: Container())
@@ -182,6 +184,7 @@ class AppWidget extends StatelessWidget {
                                                           }),
                                               ]))),
                                           playStoreRight(),
+                                          seeMore(),
                                         ]))),
                             Expanded(
                                 flex: 1,
@@ -189,13 +192,47 @@ class AppWidget extends StatelessWidget {
                                     margin: const EdgeInsets.all(15),
                                     child: ClipRRect(
                                         borderRadius:
-                                            BorderRadius.circular(8.0),
+                                            BorderRadius.circular(crop),
                                         child: Image(
                                             width: 150,
                                             height: 150,
                                             image: AssetImage(app.image)))))
                           ])))),
         ]));
+  }
+
+  Widget seeMore() {
+    final double imageWidth = 150;
+    final double imageHeight = 300;
+    return ExpansionTile(
+      title: Text('See more'),
+      children: <Widget>[
+        SizedBox(height: 10),
+        Row(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+          Expanded(
+              flex: 1,
+              child: Image(
+                  width: imageWidth,
+                  height: imageHeight,
+                  image: AssetImage(app.screenshot1))),
+          Expanded(
+              flex: 1,
+              child: Image(
+                  width: imageWidth,
+                  height: imageHeight,
+                  image: AssetImage(app.screenshot2))),
+          Expanded(
+              flex: 1,
+              child: Image(
+                  width: imageWidth,
+                  height: imageHeight,
+                  image: AssetImage(app.screenshot3)))
+        ]),
+        SizedBox(height: 10),
+        Text(app.largeDescription),
+        SizedBox(height: 10),
+      ],
+    );
   }
 
   Widget playStore() {

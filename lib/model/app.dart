@@ -10,6 +10,10 @@ class App {
   final String librariesservices;
   final String github;
   final String playstore;
+  final String screenshot1;
+  final String screenshot2;
+  final String screenshot3;
+  final String largeDescription;
 
   App(
       {required this.name,
@@ -20,5 +24,9 @@ class App {
       required this.arquitecture,
       required this.librariesservices,
       required this.github,
-      required this.playstore});
+      required this.playstore,
+      required this.screenshot1,
+      required this.screenshot2,
+      required this.screenshot3,
+      required this.largeDescription});
 }

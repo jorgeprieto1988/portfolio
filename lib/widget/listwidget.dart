@@ -9,6 +9,7 @@ class ListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       scrollDirection: Axis.vertical,
+      physics: ScrollPhysics(),
       shrinkWrap: true,
       children: Backend()
           .getApps()
