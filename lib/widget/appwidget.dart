@@ -204,13 +204,19 @@ class AppWidget extends StatelessWidget {
 
   Widget slideImage() {
     List<String> images = [app.screenshot1, app.screenshot2, app.screenshot3];
+    double heightValue = 300;
+    double widthValue = 150;
+    if (app.horizontal) {
+      heightValue = 150;
+      widthValue = 300;
+    }
     return Container(
       margin: EdgeInsets.all(15),
       child: CarouselSlider.builder(
         itemCount: images.length,
         options: CarouselOptions(
           enlargeCenterPage: false,
-          height: 300,
+          height: heightValue,
           autoPlay: true,
           autoPlayInterval: Duration(seconds: 3),
           reverse: false,
@@ -230,7 +236,7 @@ class AppWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 child: Image.network(
                   images[i],
-                  width: 150,
+                  width: widthValue,
                   fit: BoxFit.fill,
                 ),
               ),

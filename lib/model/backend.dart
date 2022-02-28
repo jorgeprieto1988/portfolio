@@ -28,6 +28,7 @@ class Backend {
         screenshot1: 'images/quicksos1.png',
         screenshot2: 'images/quicksos2.png',
         screenshot3: 'images/quicksos3.png',
+        horizontal: false,
         largeDescription:
             '''QuickSOS is my end of master project. This app aims to help people to contact emergency services or friends in a quick way in case of emergency.
         \n With an easy to understand interface, this app implements google maps API to collect your position and show it in a map, where other people can check to locate and help you. 
@@ -50,27 +51,33 @@ class Backend {
         screenshot1: 'images/betsubetsu1.png',
         screenshot2: 'images/betsubetsu2.png',
         screenshot3: 'images/betsubetsu3.png',
+        horizontal: false,
         largeDescription:
             '''BetsuBetsu is a project that come to my mind after living in Japan when going to a restaurant and you want to pay separately and then it gets complicated when you have to add the prices with taxes to every separate item.
         \n It was meant to be a one screen app but the need to add diferent users and items to the bill made me realize addin a result screen would make it easier to the user experience.
         \n This was made in Kotlin and uses two concatenated recyclerview lists (users and items) with a horizontal scrolling for users to facilitate the use of the app
         \n It shows and ad from Admob in the result screen to help me understand Admob and how the revenue in android apps works'''),
     App(
-        name: 'MovieHunters',
-        description:
-            'Movie Hunters is a party game designed to have fun playing with your friends internationally. It consists of guessing the largest number of movies, from a wide selection, in the shortest time possible, using only gestures. It shows movie titles in 3 different languages, English, Spanish and Japanese',
-        languages: 'Java',
-        image: 'images/moviehunters.png',
-        funcionalities: '',
-        arquitecture: '',
-        librariesservices: '',
-        github: 'https://github.com/jorgeprieto1988/MovieHunters',
-        playstore:
-            'https://play.google.com/store/apps/details?id=jorjoxo.app.moviehunters',
-        screenshot1: '',
-        screenshot2: '',
-        screenshot3: '',
-        largeDescription: ''),
+      name: 'MovieHunters',
+      description:
+          'Movie Hunters is a party game designed to have fun playing with your friends internationally. It consists of guessing the largest number of movies, from a wide selection, in the shortest time possible, using only gestures. It shows movie titles in 3 different languages, English, Spanish and Japanese',
+      languages: 'Java',
+      image: 'images/moviehunters.png',
+      funcionalities: '',
+      arquitecture: '',
+      librariesservices: '',
+      github: 'https://github.com/jorgeprieto1988/MovieHunters',
+      playstore:
+          'https://play.google.com/store/apps/details?id=jorjoxo.app.moviehunters',
+      screenshot1: 'images/moviehunters1.png',
+      screenshot2: 'images/moviehunters2.png',
+      screenshot3: 'images/moviehunters3.png',
+      horizontal: true,
+      largeDescription:
+          '''MovieHunters is my first app released on the google play store. It was meant to be a quick small project created with two other friends to test workteam with an agile methodology and the full deployment of an app.
+      \n MovieHunters is a game that tries to supply a need for international communities by providing a kind of "guess the movie" game with support of various languages simultaneously by showing the title of the movie in different languages at the same time.
+      \n This project uses firebase to retrieve the movie titles stored in firestore database.''',
+    ),
     App(
         name: 'TrueOrFalse',
         description:
@@ -85,6 +92,7 @@ class Backend {
         screenshot1: '',
         screenshot2: '',
         screenshot3: '',
+        horizontal: false,
         largeDescription: ''),
     App(
         name: 'TwitchAPI',
@@ -100,6 +108,7 @@ class Backend {
         screenshot1: '',
         screenshot2: '',
         screenshot3: '',
+        horizontal: false,
         largeDescription: ''),
     App(
         name: 'Multipurpose-Project',
@@ -115,6 +124,7 @@ class Backend {
         screenshot1: '',
         screenshot2: '',
         screenshot3: '',
+        horizontal: false,
         largeDescription: ''),
   ];
 

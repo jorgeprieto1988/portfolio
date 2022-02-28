@@ -13,6 +13,7 @@ class App {
   final String screenshot1;
   final String screenshot2;
   final String screenshot3;
+  final bool horizontal;
   final String largeDescription;
 
   App(
@@ -28,5 +29,6 @@ class App {
       required this.screenshot1,
       required this.screenshot2,
       required this.screenshot3,
+      required this.horizontal,
       required this.largeDescription});
 }
