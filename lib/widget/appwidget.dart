@@ -2,6 +2,7 @@ import 'package:portfolio/model/app.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/gestures.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class AppWidget extends StatelessWidget {
   final App app;
@@ -201,6 +202,45 @@ class AppWidget extends StatelessWidget {
         ]));
   }
 
+  Widget slideImage() {
+    List<String> images = [app.screenshot1, app.screenshot2, app.screenshot3];
+    return Container(
+      margin: EdgeInsets.all(15),
+      child: CarouselSlider.builder(
+        itemCount: images.length,
+        options: CarouselOptions(
+          enlargeCenterPage: false,
+          height: 300,
+          autoPlay: true,
+          autoPlayInterval: Duration(seconds: 3),
+          reverse: false,
+          aspectRatio: 1.0,
+        ),
+        itemBuilder: (context, i, id) {
+          //for onTap to redirect to another screen
+          return GestureDetector(
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                    color: Colors.white,
+                  )),
+              //ClipRRect for image border radius
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.network(
+                  images[i],
+                  width: 150,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   Widget seeMore() {
     final double imageWidth = 150;
     final double imageHeight = 300;
@@ -208,26 +248,7 @@ class AppWidget extends StatelessWidget {
       title: Text('See more'),
       children: <Widget>[
         SizedBox(height: 10),
-        Row(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
-          Expanded(
-              flex: 1,
-              child: Image(
-                  width: imageWidth,
-                  height: imageHeight,
-                  image: AssetImage(app.screenshot1))),
-          Expanded(
-              flex: 1,
-              child: Image(
-                  width: imageWidth,
-                  height: imageHeight,
-                  image: AssetImage(app.screenshot2))),
-          Expanded(
-              flex: 1,
-              child: Image(
-                  width: imageWidth,
-                  height: imageHeight,
-                  image: AssetImage(app.screenshot3)))
-        ]),
+        slideImage(),
         SizedBox(height: 10),
         Text(app.largeDescription),
         SizedBox(height: 10),
