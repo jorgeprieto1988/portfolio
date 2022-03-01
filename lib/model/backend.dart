@@ -53,7 +53,7 @@ class Backend {
         screenshot3: 'images/betsubetsu3.png',
         horizontal: false,
         largeDescription:
-            '''BetsuBetsu is a project that come to my mind after living in Japan when going to a restaurant and you want to pay separately and then it gets complicated when you have to add the prices with taxes to every separate item.
+            '''BetsuBetsu is a project that came to my mind after living in Japan when going to a restaurant and you want to pay separately and then it gets complicated when you have to add the prices with taxes to every separate item.
         \n It was meant to be a one screen app but the need to add diferent users and items to the bill made me realize addin a result screen would make it easier to the user experience.
         \n This was made in Kotlin and uses two concatenated recyclerview lists (users and items) with a horizontal scrolling for users to facilitate the use of the app
         \n It shows and ad from Admob in the result screen to help me understand Admob and how the revenue in android apps works'''),
@@ -76,12 +76,14 @@ class Backend {
       largeDescription:
           '''MovieHunters is my first app released on the google play store. It was meant to be a quick small project created with two other friends to test workteam with an agile methodology and the full deployment of an app.
       \n MovieHunters is a game that tries to supply a need for international communities by providing a kind of "guess the movie" game with support of various languages simultaneously by showing the title of the movie in different languages at the same time.
-      \n This project uses firebase to retrieve the movie titles stored in firestore database.''',
+      \n This project uses firebase to retrieve the movie titles stored in firestore database.
+      \n UI Design, Character Design by Jose Miguel Elena Carbonell (josemi_j16@hotmail.com)
+      \n Database populator, Marketing and ASO by Soraya Khayal Zamora (sory13@gmail.com)''',
     ),
     App(
         name: 'TrueOrFalse',
         description:
-            'True or false quizz game. This app uses https://opentdb.com/ API',
+            'True or false quizz game is a small project developed in flutter as a master degree project focused in creating an app using an existing API',
         languages: 'Flutter',
         image: 'images/trueorfalsesquare.png',
         funcionalities: '',
@@ -89,11 +91,14 @@ class Backend {
         librariesservices: '',
         github: 'https://github.com/jorgeprieto1988/quizz',
         playstore: '',
-        screenshot1: '',
-        screenshot2: '',
-        screenshot3: '',
+        screenshot1: 'images/trueorfalse1.png',
+        screenshot2: 'images/trueorfalse2.png',
+        screenshot3: 'images/trueorfalse3.png',
         horizontal: false,
-        largeDescription: ''),
+        largeDescription:
+            '''TrueOrFalse is a game of true or false asnwer questions, using the opendtb API to get questions, it can be played in 3 different levels of difficulty and different amount of questions can be set.
+        \n It uses http library to get the questions and decode library to transforms those questions from json.
+        \n This app uses https://opentdb.com/ API to retrieve the data'''),
     App(
         name: 'TwitchAPI',
         description:
