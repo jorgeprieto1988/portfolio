@@ -189,15 +189,23 @@ class AppWidget extends StatelessWidget {
                                         ]))),
                             Expanded(
                                 flex: 1,
-                                child: Container(
-                                    margin: const EdgeInsets.all(15),
-                                    child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(crop),
-                                        child: Image(
-                                            width: 150,
-                                            height: 150,
-                                            image: AssetImage(app.image)))))
+                                child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Container(
+                                        height: 150,
+                                        width: 150,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        margin: const EdgeInsets.all(15),
+                                        child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            child: Image(
+                                                fit: BoxFit.contain,
+                                                image:
+                                                    AssetImage(app.image))))))
                           ])))),
         ]));
   }
@@ -229,12 +237,12 @@ class AppWidget extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
-                    color: Colors.white,
+                    color: Colors.black,
                   )),
               //ClipRRect for image border radius
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Image.network(
+                child: Image.asset(
                   images[i],
                   width: widthValue,
                   fit: BoxFit.fill,
@@ -278,7 +286,7 @@ class AppWidget extends StatelessWidget {
                 }
               }));
     } else {
-      return SizedBox(height: 5);
+      return SizedBox(height: 20);
     }
   }
 
@@ -298,7 +306,7 @@ class AppWidget extends StatelessWidget {
                 }
               }));
     } else {
-      return SizedBox(height: 5);
+      return SizedBox(height: 20);
     }
   }
 }

@@ -110,11 +110,15 @@ class Backend {
         librariesservices: '',
         github: 'https://github.com/jorgeprieto1988/twitchAPI',
         playstore: '',
-        screenshot1: '',
-        screenshot2: '',
-        screenshot3: '',
+        screenshot1: 'images/twitchapi1.png',
+        screenshot2: 'images/twitchapi2.png',
+        screenshot3: 'images/twitchapi3.png',
         horizontal: false,
-        largeDescription: ''),
+        largeDescription:
+            '''TwitchAPI is a project made in the advanced android development subject of my master degree course to test and implement more advanced android features
+        \n It uses the MVVM arquitecture with the Viewmodel and MutableliveData library.
+        \n Ktor library to use the API from twitch, retrieve the access and refresh tokens and get information about the streams and your own profile.
+        \n Use of room library to save and read stream information, asynchronous calls with coroutines, RecyclerView with an OnScrollListener for a infinite scrolling experience.'''),
     App(
         name: 'Multipurpose-Project',
         description:
@@ -126,11 +130,12 @@ class Backend {
         librariesservices: '',
         github: 'https://github.com/jorgeprieto1988/Multipurpose-Project',
         playstore: '',
-        screenshot1: '',
-        screenshot2: '',
-        screenshot3: '',
+        screenshot1: 'images/multipurposeproject1.png',
+        screenshot2: 'images/multipurposeproject2.png',
+        screenshot3: 'images/multipurposeproject3.png',
         horizontal: false,
-        largeDescription: ''),
+        largeDescription:
+            '''This is one of the first projects I made, the main goals is the use of basic android features like RecyclerViews, the maps library and how to point on the map, and the use of the camera among others.'''),
   ];
 
   ///
