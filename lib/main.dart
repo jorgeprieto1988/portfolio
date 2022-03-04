@@ -33,6 +33,9 @@ class MyHomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
+              SizedBox(
+                height: 15.0,
+              ),
               aboutMeBox(context),
               SizedBox(
                 height: 50.0,
