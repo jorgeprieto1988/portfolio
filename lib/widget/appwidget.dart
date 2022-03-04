@@ -33,16 +33,7 @@ class AppWidget extends StatelessWidget {
                       child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                    Expanded(
-                        flex: 1,
-                        child: Container(
-                            margin: const EdgeInsets.all(15),
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(crop),
-                                child: Image(
-                                    width: 150,
-                                    height: 150,
-                                    image: AssetImage(app.image))))),
+                    Expanded(flex: 1, child: iconImage()),
                     Expanded(
                         flex: 3,
                         child: Column(
@@ -54,7 +45,6 @@ class AppWidget extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
-                                  letterSpacing: -1,
                                 ),
                               ),
                               SizedBox(height: 5),
@@ -64,7 +54,6 @@ class AppWidget extends StatelessWidget {
                                     app.description,
                                     style: TextStyle(
                                       fontSize: 15,
-                                      letterSpacing: -1,
                                       overflow: TextOverflow.clip,
                                     ),
                                   )),
@@ -75,7 +64,6 @@ class AppWidget extends StatelessWidget {
                                     "Language: " + app.languages,
                                     style: TextStyle(
                                       fontSize: 15,
-                                      letterSpacing: -1,
                                     ),
                                   )),
                               SizedBox(height: 10),
@@ -134,10 +122,9 @@ class AppWidget extends StatelessWidget {
                                               child: Text(
                                                 app.name,
                                                 style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
-                                                  letterSpacing: -1,
-                                                ),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                    color: Colors.white),
                                               )),
                                           SizedBox(height: 5),
                                           Align(
@@ -146,7 +133,7 @@ class AppWidget extends StatelessWidget {
                                                 app.description,
                                                 style: TextStyle(
                                                   fontSize: 15,
-                                                  letterSpacing: -1,
+                                                  color: Colors.white,
                                                   overflow: TextOverflow.clip,
                                                 ),
                                               )),
@@ -156,9 +143,8 @@ class AppWidget extends StatelessWidget {
                                               child: Text(
                                                 "Language: " + app.languages,
                                                 style: TextStyle(
-                                                  fontSize: 15,
-                                                  letterSpacing: -1,
-                                                ),
+                                                    fontSize: 15,
+                                                    color: Colors.white),
                                               )),
                                           SizedBox(height: 10),
                                           Align(
@@ -187,27 +173,25 @@ class AppWidget extends StatelessWidget {
                                           playStoreRight(),
                                           seeMore(),
                                         ]))),
-                            Expanded(
-                                flex: 1,
-                                child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Container(
-                                        height: 150,
-                                        width: 150,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        margin: const EdgeInsets.all(15),
-                                        child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                            child: Image(
-                                                fit: BoxFit.contain,
-                                                image:
-                                                    AssetImage(app.image))))))
+                            Expanded(flex: 1, child: iconImage())
                           ])))),
         ]));
+  }
+
+  Widget iconImage() {
+    return Align(
+        alignment: Alignment.center,
+        child: Container(
+            height: 150,
+            width: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: const EdgeInsets.all(15),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child:
+                    Image(fit: BoxFit.contain, image: AssetImage(app.image)))));
   }
 
   Widget slideImage() {
