@@ -54,18 +54,35 @@ class MyHomePage extends StatelessWidget {
                   topLeft: Radius.circular(100.0),
                   bottomLeft: Radius.circular(100.0)),
             ),
-            constraints: BoxConstraints.expand(height: 300, width: 300),
+            constraints: BoxConstraints.expand(height: 350, width: 350),
             padding: const EdgeInsets.all(8.0),
             color: Colors.green,
             alignment: Alignment.topLeft,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('About me',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline4!
-                          .copyWith(color: Colors.white)),
+                  Row(children: <Widget>[
+                    Text('About me',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline4!
+                            .copyWith(color: Colors.white)),
+                    Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                            height: 100,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                            ),
+                            margin: const EdgeInsets.all(15),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Image(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(
+                                        "images/portfolioandroid3.png"))))),
+                  ]),
                   SizedBox(
                     height: 10.0,
                   ),
@@ -73,7 +90,7 @@ class MyHomePage extends StatelessWidget {
                   \n Welcome to my android portfolio. Here I have some projects I have done during the course of my master degree in mobile application development. There are also some other private projects I have done by myself. 
                   \n There is links to playstore and github for every project but some of the github projects are private so please, contact me in case you want to take a look.
                   jorgeappdeveloper@gmail.com''',
-                      style: TextStyle(color: Colors.white))
+                      style: TextStyle(color: Colors.white)),
                 ])));
   }
 }
