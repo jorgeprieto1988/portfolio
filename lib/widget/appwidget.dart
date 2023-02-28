@@ -72,7 +72,7 @@ class AppWidget extends StatelessWidget {
                                   child: RichText(
                                       text: TextSpan(children: [
                                     TextSpan(
-                                        text: "Github",
+                                        text: getGitHub(app.github),
                                         style: TextStyle(
                                             fontSize: 15, color: Colors.blue),
                                         recognizer: TapGestureRecognizer()
@@ -91,6 +91,14 @@ class AppWidget extends StatelessWidget {
                   ])))),
           Expanded(flex: 1, child: Container())
         ]));
+  }
+
+  String getGitHub(content) {
+    if (content != '') {
+      return "Github";
+    } else {
+      return "";
+    }
   }
 
   Widget rightColumn() {
@@ -152,7 +160,7 @@ class AppWidget extends StatelessWidget {
                                               child: RichText(
                                                   text: TextSpan(children: [
                                                 TextSpan(
-                                                    text: "Github",
+                                                    text: getGitHub(app.github),
                                                     style: TextStyle(
                                                         fontSize: 15,
                                                         color: Color.fromARGB(

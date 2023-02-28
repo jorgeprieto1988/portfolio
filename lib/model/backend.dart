@@ -13,6 +13,27 @@ class Backend {
   /// Private list of apps.
   final _apps = [
     App(
+        name: 'OneMessage',
+        description:
+            'Messaging app that allows only one message at a time, does not haver a log tracking and does not allow screenshots so old messsages can not be recovered',
+        languages: 'Kotlin',
+        image: 'images/onemessage.png',
+        funcionalities:
+            'Create an informative alarm in two steps, Shows your position in a map, Search and add friends, Send and receive help alarms to friends',
+        arquitecture: 'MVVM',
+        librariesservices:
+            'Room, ViewModel, Firebase, Picasso, Mockito, Espresso, Google',
+        github: '',
+        playstore:
+            'https://play.google.com/store/apps/details?id=jorgeprietomartintfm.app.onemessage',
+        screenshot1: 'images/onemessage1.png',
+        screenshot2: 'images/onemessage2.png',
+        screenshot3: 'images/onemessage3.png',
+        horizontal: false,
+        largeDescription:
+            '''This app was created to test some features and development in MVVM, along with the releasing of an app that manages user data.
+        \n Its Alpha version only allows creating an account with google sign in. '''),
+    App(
         name: 'QuickSOS',
         description:
             'QuickSOS is an Android App that allows you contact an emergency service or a friend in a quick way whenever or wherever you are.',
@@ -23,7 +44,7 @@ class Backend {
         arquitecture: 'MVP',
         librariesservices:
             'Room, Coroutines, Firebase, Picasso, Mockito, Espresso, Maps',
-        github: 'https://github.com/jorgeprieto1988/QuickSoS2',
+        github: '',
         playstore: '',
         screenshot1: 'images/quicksos1.png',
         screenshot2: 'images/quicksos2.png',
@@ -45,7 +66,7 @@ class Backend {
         funcionalities: '',
         arquitecture: '',
         librariesservices: '',
-        github: 'https://github.com/jorgeprieto1988/BetsuBetsu',
+        github: '',
         playstore:
             'https://play.google.com/store/apps/details?id=prieto.jorge.betsubetsu',
         screenshot1: 'images/betsubetsu1.png',
@@ -66,7 +87,7 @@ class Backend {
       funcionalities: '',
       arquitecture: '',
       librariesservices: '',
-      github: 'https://github.com/jorgeprieto1988/MovieHunters',
+      github: '',
       playstore:
           'https://play.google.com/store/apps/details?id=jorjoxo.app.moviehunters',
       screenshot1: 'images/moviehunters1.png',

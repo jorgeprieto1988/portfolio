@@ -81,7 +81,7 @@ class MyHomePage extends StatelessWidget {
                                 child: Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage(
-                                        "images/portfolioandroid3.png"))))),
+                                        "images/portfolioandroid4.jpg"))))),
                   ]),
                   SizedBox(
                     height: 10.0,
