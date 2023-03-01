@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Android Portfolio - Prieto Martin Jorge',
       theme: ThemeData(
+        scaffoldBackgroundColor: Color.fromARGB(255, 189, 187, 187),
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
