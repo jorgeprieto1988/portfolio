@@ -28,21 +28,25 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Android Portfolio - Prieto Martin Jorge'),
         ),
-        body: SingleChildScrollView(
-            child: Center(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-              SizedBox(
-                height: 15.0,
-              ),
-              aboutMeBox(context),
-              SizedBox(
-                height: 50.0,
-              ),
-              ListWidget(),
-            ]))));
+        body: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Expanded(
+              flex: 2,
+              child: SingleChildScrollView(
+                  child: Center(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                    ListWidget(),
+                  ])))),
+          Expanded(
+              child: SingleChildScrollView(
+                  child: Center(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[aboutMeBox(context)])))),
+        ]));
   }
 
   Widget aboutMeBox(context) {
@@ -55,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                   topLeft: Radius.circular(100.0),
                   bottomLeft: Radius.circular(100.0)),
             ),
-            constraints: BoxConstraints.expand(height: 350, width: 350),
+            constraints: BoxConstraints.expand(height: 1000, width: 500),
             padding: const EdgeInsets.all(8.0),
             color: Colors.green,
             alignment: Alignment.topLeft,
@@ -71,8 +75,8 @@ class MyHomePage extends StatelessWidget {
                     Align(
                         alignment: Alignment.center,
                         child: Container(
-                            height: 100,
-                            width: 100,
+                            height: 150,
+                            width: 150,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(40),
                             ),

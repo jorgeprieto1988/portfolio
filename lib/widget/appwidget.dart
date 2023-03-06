@@ -27,69 +27,67 @@ class AppWidget extends StatelessWidget {
         decoration: BoxDecoration(),
         child: Row(children: <Widget>[
           Expanded(
-              flex: 3,
               child: Container(
                   child: Card(
                       child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                    Expanded(flex: 1, child: iconImage()),
-                    Expanded(
-                        flex: 3,
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                app.name,
+                Expanded(flex: 1, child: iconImage()),
+                Expanded(
+                    flex: 3,
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            app.name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                app.description,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                                  fontSize: 15,
+                                  overflow: TextOverflow.clip,
                                 ),
-                              ),
-                              SizedBox(height: 5),
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    app.description,
+                              )),
+                          SizedBox(height: 10),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Language: " + app.languages,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                ),
+                              )),
+                          SizedBox(height: 10),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: RichText(
+                                  text: TextSpan(children: [
+                                TextSpan(
+                                    text: getGitHub(app.github),
                                     style: TextStyle(
-                                      fontSize: 15,
-                                      overflow: TextOverflow.clip,
-                                    ),
-                                  )),
-                              SizedBox(height: 10),
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    "Language: " + app.languages,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                    ),
-                                  )),
-                              SizedBox(height: 10),
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: RichText(
-                                      text: TextSpan(children: [
-                                    TextSpan(
-                                        text: getGitHub(app.github),
-                                        style: TextStyle(
-                                            fontSize: 15, color: Colors.blue),
-                                        recognizer: TapGestureRecognizer()
-                                          ..onTap = () async {
-                                            var url = app.github;
-                                            if (await canLaunch(url)) {
-                                              await launch(url);
-                                            } else {
-                                              throw 'Could not launch $url';
-                                            }
-                                          }),
-                                  ]))),
-                              playStore(),
-                              seeMore(),
-                            ]))
-                  ])))),
-          Expanded(flex: 1, child: Container())
+                                        fontSize: 15, color: Colors.blue),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () async {
+                                        var url = app.github;
+                                        if (await canLaunch(url)) {
+                                          await launch(url);
+                                        } else {
+                                          throw 'Could not launch $url';
+                                        }
+                                      }),
+                              ]))),
+                          playStore(),
+                          seeMore(),
+                        ]))
+              ])))),
         ]));
   }
 
@@ -106,9 +104,7 @@ class AppWidget extends StatelessWidget {
         margin: EdgeInsets.all(5.0),
         decoration: BoxDecoration(),
         child: Row(children: <Widget>[
-          Expanded(flex: 1, child: Container()),
           Expanded(
-              flex: 3,
               child: Container(
                   child: Card(
                       color: Colors.green,
